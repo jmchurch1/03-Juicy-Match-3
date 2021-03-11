@@ -1,79 +1,79 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Grid/grid.gd" type="Script" id=1]
-[ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/HUD.gd" type="Script" id=3]
-[ext_resource path="res://Assets/NexaRustHandmade-Extended.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://UI/Camera.gd" type="Script" id=5]
-[ext_resource path="res://Banger music.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Bear.wav" type="AudioStream" id=7]
-[ext_resource path="res://Chick.wav" type="AudioStream" id=8]
-[ext_resource path="res://Duck.wav" type="AudioStream" id=9]
-[ext_resource path="res://Gorilla.wav" type="AudioStream" id=10]
-[ext_resource path="res://Narwhal.wav" type="AudioStream" id=11]
-[ext_resource path="res://Cow.wav" type="AudioStream" id=12]
-[ext_resource path="res://Zebra.wav" type="AudioStream" id=13]
-[ext_resource path="res://Pig.wav" type="AudioStream" id=14]
-[ext_resource path="res://Assets/NexaRustSlab-BlackShadow01.otf" type="DynamicFontData" id=15]
-[ext_resource path="res://UI/Instructions.gd" type="Script" id=16]
+[ext_resource path="res://Banger music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Bear.wav" type="AudioStream" id=2]
+[ext_resource path="res://Chick.wav" type="AudioStream" id=3]
+[ext_resource path="res://Duck.wav" type="AudioStream" id=4]
+[ext_resource path="res://Gorilla.wav" type="AudioStream" id=5]
+[ext_resource path="res://Narwhal.wav" type="AudioStream" id=6]
+[ext_resource path="res://Cow.wav" type="AudioStream" id=7]
+[ext_resource path="res://Zebra.wav" type="AudioStream" id=8]
+[ext_resource path="res://Pig.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/NexaRustHandmade-Extended.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/NexaRustSlab-BlackShadow01.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://Grid/grid.gd" type="Script" id=12]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=13]
+[ext_resource path="res://UI/Camera.gd" type="Script" id=14]
+[ext_resource path="res://UI/Instructions.gd" type="Script" id=15]
+[ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 4 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 15 )
+font_data = ExtResource( 11 )
 
 [node name="Game" type="Node2D"]
 
 [node name="grid" type="Node2D" parent="."]
-script = ExtResource( 1 )
+script = ExtResource( 12 )
 width = 7
 height = 10
 xStart = 80
 yStart = 832
 offset = 70
-background = ExtResource( 2 )
+background = ExtResource( 16 )
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
-script = ExtResource( 5 )
+script = ExtResource( 14 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 1 )
 volume_db = -24.233
 autoplay = true
 
 [node name="Bear" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 2 )
 
 [node name="Chick" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 3 )
 
 [node name="Cow" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 7 )
 
 [node name="Duck" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 4 )
 
 [node name="Gorilla" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 5 )
 attenuation = 0.233258
 
 [node name="Narwhal" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 6 )
 
 [node name="Pig" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 14 )
+stream = ExtResource( 9 )
 
 [node name="Zebra" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 8 )
 attenuation = 0.287175
 
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 3 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -108,7 +108,7 @@ pause_mode = 2
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 16 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -122,9 +122,10 @@ color = Color( 0, 0, 0, 0.752941 )
 margin_right = 576.0
 margin_bottom = 1024.0
 custom_fonts/font = SubResource( 2 )
-text = "Level 1
+text = "Level 2
 
-How many points can you score in 60 seconds?"
+How long will it take you to score 2000 points?
+"
 align = 1
 valign = 1
 __meta__ = {
