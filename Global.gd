@@ -5,8 +5,8 @@ var time = 0
 
 var level = 1
 
-var level1_default = 5
-var level2_default = 20
+var level1_default = 60
+var level2_default = 2000
 
 var level1_score = 0
 var level2_time = 0
