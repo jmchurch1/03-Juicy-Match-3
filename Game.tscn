@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Assets/NexaRustHandmade-Extended.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/Camera.gd" type="Script" id=5]
+[ext_resource path="res://Banger music.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Bear.wav" type="AudioStream" id=7]
+[ext_resource path="res://Chick.wav" type="AudioStream" id=8]
+[ext_resource path="res://Duck.wav" type="AudioStream" id=9]
+[ext_resource path="res://Gorilla.wav" type="AudioStream" id=10]
+[ext_resource path="res://Narwhal.wav" type="AudioStream" id=11]
+[ext_resource path="res://Cow.wav" type="AudioStream" id=12]
+[ext_resource path="res://Zebra.wav" type="AudioStream" id=13]
+[ext_resource path="res://Pig.wav" type="AudioStream" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
 
 [node name="Game" type="Node2D"]
 
 [node name="grid" type="Node2D" parent="."]
 script = ExtResource( 1 )
-width = 4
-height = 5
-xStart = 96
+width = 7
+height = 10
+xStart = 80
 yStart = 832
-offset = 128
+offset = 70
 background = ExtResource( 2 )
 
 [node name="HUD" type="Control" parent="."]
@@ -24,6 +38,60 @@ __meta__ = {
 }
 
 [node name="Score" type="Label" parent="HUD"]
-margin_right = 576.0
-margin_bottom = 20.0
-text = "Score: "
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 586.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = "Score   "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="HUD"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 565.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = "Time  "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 5 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -13.126
+autoplay = true
+
+[node name="Bear" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Chick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Cow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Duck" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Gorilla" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+attenuation = 0.233258
+
+[node name="Narwhal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Pig" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Zebra" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+attenuation = 0.287175
